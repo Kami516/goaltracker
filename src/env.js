@@ -7,7 +7,8 @@ export const env = createEnv({
    * isn't built with invalid env vars.
    */
   server: {
-    AUTH_SECRET:
+    
+    AUTH_SECRET: 
       process.env.NODE_ENV === "production"
         ? z.string()
         : z.string().optional(),
@@ -15,7 +16,7 @@ export const env = createEnv({
     AUTH_DISCORD_SECRET: z.string(),
     AUTH_GITHUB_ID: z.string(),
     AUTH_GITHUB_SECRET: z.string(),
-    // DATABASE_URL: z.string().url(),
+    DATABASE_URL: z.string().url(),
     NODE_ENV: z
       .enum(["development", "test", "production"])
       .default("development"),
